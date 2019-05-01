@@ -1,7 +1,7 @@
 # Лабораторна робота № 2. Формат HDF5. 
 
 ## Task1
-# Завантажте файл з даними за посиланням 
+### Завантажте файл з даними за посиланням 
 ```r
 fileUrl = "https://dcc.ligo.org/public/0146/P1700337/001/H-H1_LOSC_C00_4_V1-1187006834-4096.hdf5"
 download.file(fileUrl, destfile = "file.hdf5", mode="wb")
@@ -10,7 +10,7 @@ Content type 'text/plain; charset=UTF-8' length 125217658 bytes (119.4 MB)
 downloaded 119.4 MB
 ```
 ## Task2
-# Встановить в R пакет для роботи з HDF5 файлами. 
+### Встановить в R пакет для роботи з HDF5 файлами. 
 ```r
 install.packages("BiocManager")
 BiocManager::install("rhdf5")
@@ -18,7 +18,7 @@ library(rhdf5)
 ```
 
 ## Task3
-# Виведіть зміст файлу командою h5ls()
+### Виведіть зміст файлу командою h5ls()
 ```r
 h5ls("file.hdf5")
                  group            name       otype
@@ -69,7 +69,7 @@ h5ls("file.hdf5")
 
 
 ## Task4
-# Зчитайте результати вимірів. Для цього зчитайте name Strain з групи strain
+### Зчитайте результати вимірів. Для цього зчитайте name Strain з групи strain
 в змінну strain. Після зчитування не забувайте закривати файл командою
 H5Close()
 ```r
@@ -78,7 +78,7 @@ H5close()
 ```
 
 ## Task5
-# Також з «strain/Strain» зчитайте атрибут (функція h5readAttributes)
+### Також з «strain/Strain» зчитайте атрибут (функція h5readAttributes)
 Xspacing в змінну st та виведіть її. Це інтервал часу між вимірами. 
 ```r
 st <- h5readAttributes("file.hdf5", "/strain/Strain")$Xspacing
@@ -88,7 +88,7 @@ st
 ```
 
 ## Task6
-# Знайдіть час початку події та її тривалість. Для цього з групи meta зчитайте
+### Знайдіть час початку події та її тривалість. Для цього з групи meta зчитайте
 в змінну gpsStart name GPSstart та в змінну duration name Duration.
 ```r
 gpsStart <- h5read("file.hdf5", "meta/GPSstart")
@@ -109,7 +109,7 @@ gpsEnd
 ```
 
 ## Task8
-# Створіть вектор з часу вимірів і збережіть у змінну myTime. Початок
+### Створіть вектор з часу вимірів і збережіть у змінну myTime. Початок
 послідовності – gpsStart, кінець – gpsEnd, крок – st.
 ```r
 myTime <- seq(gpsStart, gpsEnd, st)
@@ -122,14 +122,14 @@ myTime <- seq(gpsStart, gpsEnd, st)
 ```
 
 ## Task9
-# Побудуємо графік тільки для першого мільйону вимірів. Для цього створіть
+### Побудуємо графік тільки для першого мільйону вимірів. Для цього створіть
 змінну numSamples, яка дорівнює 1000000
 ```r
 numSamples <- 1000000
 ```
 
 ## Task10
-# Побудуйте графік за допомогою функції plot(myTime[0:numSamples],
+### Побудуйте графік за допомогою функції plot(myTime[0:numSamples],
 strain[0:numSamples], type = "l", xlab = "GPS Time (s)", ylab = "H1 Strain")
 ```r
 plot(myTime[0:numSamples], strain[0:numSamples], type = "l", xlab = "GPS Time (s)", ylab = "H1 Strain")
