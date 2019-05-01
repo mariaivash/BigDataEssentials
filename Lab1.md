@@ -1,11 +1,7 @@
 # Лабораторна робота № 1. Завантаження та зчитування даних.
 
 ## Task1
-### За допомогою download.file() завантажте любий excel файл з порталу
-http://data.gov.ua та зчитайте його (xls, xlsx – бінарні формати, тому
-встановить mode = “wb”. 
-Виведіть перші 6 строк отриманого фрейму
-даних.
+### За допомогою download.file() завантажте любий excel файл з порталу та зчитайте його. Виведіть перші 6 строк отриманого фрейму даних.
 
 ```r
 setwd("C:\\Users\\Mary\\Downloads")
@@ -51,8 +47,7 @@ head(aesData)
 ```
 
 ## Task2
-### За допомогою download.file() завантажте файл getdata_data_ss06hid.csv за
-посиланням та завантажте дані в R.
+### За допомогою download.file() завантажте файл getdata_data_ss06hid.csv за посиланням та завантажте дані в R.
 
 ```r
 if (!file.exists("getdata_data_ss06hid.csv")) {
@@ -83,8 +78,7 @@ Installing package into ‘C:/Users/Mary/Documents/R/win-library/3.6’
 (as ‘lib’ is unspecified)
 trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/XML_3.98-1.19.zip'
 Content type 'application/zip' length 4610686 bytes (4.4 MB)
-downloaded 4.4 MB
-
+downloaded 4.4 MB 
 package ‘XML’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
