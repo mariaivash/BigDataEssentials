@@ -83,6 +83,8 @@ package ‘XML’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
 	C:\Users\Mary\AppData\Local\Temp\RtmpmQ0CRE\downloaded_packages
+	
+library(XML)	
 ```
 ```r
 fileUrl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
